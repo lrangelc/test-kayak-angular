@@ -1,6 +1,13 @@
+<mat-checkbox class="example-margin" [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
+</mat-checkbox>
+<mat-checkbox class="example-margin" [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
+</mat-checkbox>
+<mat-checkbox class="example-margin" [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)">Star Alliance
+</mat-checkbox>
+
 <mat-grid-list [cols]="cols$ | async" rowHeight="2:1">
   <mat-grid-tile *ngFor="let airline of airlinesPage">{{airline.code}}</mat-grid-tile>
 </mat-grid-list>
-<mat-paginator [length]="airlines.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-  [pageIndex]="pageIndex" (page)="handlePageEvent($event)" aria-label="Select page">
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+  (page)="handlePageEvent($event)" aria-label="Select page">
 </mat-paginator>

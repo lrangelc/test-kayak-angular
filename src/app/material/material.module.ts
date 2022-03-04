@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -11,8 +12,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     CommonModule,
     MatGridListModule,
     MatPaginatorModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSelectModule
   ],
-  exports: [MatGridListModule, MatPaginatorModule]
+  exports: [MatGridListModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatSelectModule]
 })
 export class MaterialModule { }
