@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "kayak-angular:build:production",
+            "firebaseProject": "larc-test-b41cb",
+            "firebaseHostingSite": "larc-test-b41cb"
+          }
         }
       }
     }

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "larc-test-b41cb"
+  },
+  "targets": {
+    "larc-test-b41cb": {
+      "hosting": {
+        "kayak-angular": [
+          "larc-test-b41cb"
+        ]
+      }
+    }
+  }
+}
