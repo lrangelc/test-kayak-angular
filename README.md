@@ -1,6 +1,11 @@
 # KayakAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
+Codesandox.io projects:
+  kayak-angular `https://codesandbox.io/s/kayak-angular-forked-zm6vy2`;
+  kayak-angular-2 `https://codesandbox.io/s/kayak-angular-2-forked-bgn6jb`;
+  github repo `github.com/lrangelc/test-kayak-angular`;
+  Production version `kayak-production-larc-test-web.app`;
 
 ## Development server
 
