@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { PageEvent } from '@angular/material/paginator';
 import { map, Observable, Subject, takeUntil } from 'rxjs';
 
@@ -20,12 +20,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
-  pageSizeOptionsXSmall = [6, 12, 24, 120];
-  pageSizeOptionsSmall = [5, 10, 25, 100];
+  pageSizeOptionsXSmall = [3, 6, 12, 60];
+  pageSizeOptionsSmall = [6, 12, 24, 120];
   pageSizeOptionsDefault = [6, 12, 24, 120];
 
-  pageSizeXSmall = 4;
-  pageSizeSmall = 10;
+  pageSizeXSmall = 3;
+  pageSizeSmall = 6;
   pageSizeDefault = 12;
 
   colsXSmall = 1;
@@ -45,6 +45,8 @@ export class AppComponent implements OnInit, OnDestroy {
   SKY_TEAM_VALUE = 'ST';
   STAR_ALLIANCE_VALUE = 'SA';
 
+  cols = this.colsDefault;
+
   cols$: Observable<number> = this.breakpointObserver
     .observe([Breakpoints.Small, Breakpoints.XSmall])
     .pipe(
@@ -52,25 +54,55 @@ export class AppComponent implements OnInit, OnDestroy {
         if (result.breakpoints[Breakpoints.XSmall]) {
           this.pageSize = this.pageSizeXSmall;
           this.pageSizeOptions = this.pageSizeOptionsXSmall;
-          console.log(`colsXSmall`);
           return this.colsXSmall;
         } else if (result.breakpoints[Breakpoints.Small]) {
           this.pageSize = this.pageSizeSmall;
           this.pageSizeOptions = this.pageSizeOptionsSmall;
-          console.log(`colsSmall`);
           return this.colsSmall;
         } else {
           this.pageSize = this.pageSizeDefault;
           this.pageSizeOptions = this.pageSizeOptionsDefault;
-          console.log(`colsDefault`);
           return this.colsDefault;
         }
       }),
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private airlinesService: AirlinesService) { }
+  constructor(public breakpointObserver: BreakpointObserver, private airlinesService: AirlinesService) { }
 
   ngOnInit(): void {
+    this.breakpointObserver
+      .observe([Breakpoints.XSmall])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.pageSize = this.pageSizeXSmall;
+          this.pageSizeOptions = this.pageSizeOptionsXSmall;
+          this.cols = this.colsXSmall;
+          this.showAirlines();
+        }
+      });
+
+    this.breakpointObserver
+      .observe([Breakpoints.Small])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.pageSize = this.pageSizeSmall;
+          this.pageSizeOptions = this.pageSizeOptionsSmall;
+          this.cols = this.colsSmall;
+          this.showAirlines();
+        }
+      });
+
+    this.breakpointObserver
+      .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.pageSize = this.pageSizeDefault;
+          this.pageSizeOptions = this.pageSizeOptionsDefault;
+          this.cols = this.colsDefault;
+          this.showAirlines();
+        }
+      });
+
     this.airlinesService.getAirlines().pipe(takeUntil(this.destroy$)).subscribe((airlines: Object | Airline[]) => {
       this.airlines = airlines;
 

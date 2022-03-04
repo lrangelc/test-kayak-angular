@@ -1,6 +1,7 @@
 <div class="main-wrapper">
   <div class="main-box main-header">Header</div>
-  <div class="main-box main-content">Content
+  <div class="main-box main-content">
+    <h1>Airlines</h1>
     <!-- <br /> The four arrows are inline images inside the content area.
     <img src="http://gridbyexample.com/examples/code/arrow-top-left.png" alt="top left" class="topleft" />
     <img src="http://gridbyexample.com/examples/code/arrow-top-right.png" alt="top right" class="topright" />
@@ -8,27 +9,31 @@
     <img src="http://gridbyexample.com/examples/code/arrow-bottom-right.png" alt="bottom right" class="bottomright" /> -->
 
     <div class="airline-filters">
-      <mat-checkbox class="example-margin" [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
+      <h3>Filter by Alliances</h3>
+      <mat-checkbox [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
       </mat-checkbox>
-      <mat-checkbox class="example-margin" [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
+      <mat-checkbox [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
       </mat-checkbox>
-      <mat-checkbox class="example-margin" [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)">Star
+      <mat-checkbox [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)"> Star
         Alliance
       </mat-checkbox>
     </div>
 
     <div class="airline-grid-list">
+      <div class="child">
 
-
-      <div class="wrapper">
-        <div *ngFor="let airline of airlinesPage" class="box">
-          <div>
-            <div>{{airline.name}}</div>
-            <div *ngIf="airline.alliance === ONEWORLD_VALUE">Oneworld</div>
-            <div *ngIf="airline.alliance === SKY_TEAM_VALUE">Sky Team</div>
-            <div *ngIf="airline.alliance === STAR_ALLIANCE_VALUE">Star Alliance</div>
-            <div>{{airline.phone}}</div>
-            <div>{{airline.site | domain}}</div>
+        <div class="wrapper">
+          <div *ngFor="let airline of airlinesPage" class="box">
+            <div class="container">
+              <div class="airplane-child">
+                <div class="alliance-name">{{airline.name}}</div>
+                <div class="alliance-checkbox" *ngIf="airline.alliance === ONEWORLD_VALUE">Oneworld</div>
+                <div class="alliance-checkbox" *ngIf="airline.alliance === SKY_TEAM_VALUE">Sky Team</div>
+                <div class="alliance-checkbox" *ngIf="airline.alliance === STAR_ALLIANCE_VALUE">Star Alliance</div>
+                <div class="alliance-phone">{{airline.phone}}</div>
+                <div class="alliance-site">{{airline.site | domain}}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -41,10 +46,11 @@
     </div>
 
   </div>
-  <div class="main-box main-footer">Footer
+
+  <div class="main-footer">
     <div class="airline-paginator">
-      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-        [pageIndex]="pageIndex" (page)="handlePageEvent($event)" aria-label="Select page">
+      <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+        (page)="handlePageEvent($event)" aria-label="Select page">
       </mat-paginator>
     </div>
   </div>
