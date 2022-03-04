@@ -11,10 +11,14 @@ import { AppComponent } from './app.component';
 // Modules
 import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
+import { AirlineGridTileComponent } from './shared/components/airline-grid-tile/airline-grid-tile.component';
+import { DomainPipe } from './shared/pipes/domain.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AirlineGridTileComponent,
+    DomainPipe
   ],
   imports: [
     BrowserModule,

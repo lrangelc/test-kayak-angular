@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { PageEvent } from '@angular/material/paginator';
 import { map, Observable, Subject, takeUntil } from 'rxjs';
@@ -11,7 +11,7 @@ import { AirlinesService } from './core/services/airlines/airlines.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
 
   title = 'kayak-angular';
 
@@ -52,14 +52,17 @@ export class AppComponent implements OnInit {
         if (result.breakpoints[Breakpoints.XSmall]) {
           this.pageSize = this.pageSizeXSmall;
           this.pageSizeOptions = this.pageSizeOptionsXSmall;
+          console.log(`colsXSmall`);
           return this.colsXSmall;
         } else if (result.breakpoints[Breakpoints.Small]) {
           this.pageSize = this.pageSizeSmall;
           this.pageSizeOptions = this.pageSizeOptionsSmall;
+          console.log(`colsSmall`);
           return this.colsSmall;
         } else {
           this.pageSize = this.pageSizeDefault;
           this.pageSizeOptions = this.pageSizeOptionsDefault;
+          console.log(`colsDefault`);
           return this.colsDefault;
         }
       }),
