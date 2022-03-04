@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   pageSizeOptionsXSmall = [3, 6, 12, 60];
-  pageSizeOptionsSmall = [6, 12, 24, 120];
+  pageSizeOptionsSmall = [4, 8, 16, 64];
   pageSizeOptionsDefault = [6, 12, 24, 120];
 
   pageSizeXSmall = 3;

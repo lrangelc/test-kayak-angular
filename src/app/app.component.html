@@ -1,25 +1,35 @@
 <div class="main-wrapper">
-  <div class="main-box main-header">Header</div>
-  <div class="main-box main-content">
-    <h1>Airlines</h1>
+  <div class="main-header">
+    <div class="header-container">
+      <div class="header-child">
+        <img class="header-logo" src="./../assets/images/Logo.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="title">Airlines</div>
+    <div class="subtitle">Filter by Alliances</div>
     <div class="airline-filters">
-      <h3>Filter by Alliances</h3>
-      <mat-checkbox [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
+      <mat-checkbox class="filter-checkbox" [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
       </mat-checkbox>
-      <mat-checkbox [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
+      <mat-checkbox class="filter-checkbox" [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
       </mat-checkbox>
-      <mat-checkbox [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)"> Star
+      <mat-checkbox class="filter-checkbox" [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)"> Star
         Alliance
       </mat-checkbox>
     </div>
 
     <div class="airline-grid-list">
       <div class="child">
-
         <div class="wrapper">
           <div *ngFor="let airline of airlinesPage" class="box">
             <div class="container">
-              <div class="airplane-child">
+              <div></div>
+              <div class="airline-child-image">
+                <img class="airline-img" src="{{'https://content.r9cdn.net' + airline.logoURL}}" alt="">
+              </div>
+              <div class="airline-child-text">
                 <div class="alliance-name">{{airline.name}}</div>
                 <div class="alliance-checkbox" *ngIf="airline.alliance === ONEWORLD_VALUE">Oneworld</div>
                 <div class="alliance-checkbox" *ngIf="airline.alliance === SKY_TEAM_VALUE">Sky Team</div>
@@ -27,16 +37,11 @@
                 <div class="alliance-phone">{{airline.phone}}</div>
                 <div class="alliance-site">{{airline.site | domain}}</div>
               </div>
+              <div></div>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- <div class="airline-paginator">
-        <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
-          [pageIndex]="pageIndex" (page)="handlePageEvent($event)" aria-label="Select page">
-        </mat-paginator>
-      </div> -->
     </div>
 
   </div>
