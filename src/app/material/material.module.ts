@@ -5,6 +5,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [],
@@ -13,11 +14,14 @@ import { MatSelectModule } from '@angular/material/select';
     MatGridListModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   exports: [MatGridListModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatSelectModule]
+    MatSelectModule,
+    MatCardModule
+  ]
 })
 export class MaterialModule { }
