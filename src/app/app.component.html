@@ -22,6 +22,10 @@
 
     <div class="airline-grid-list">
       <div class="child">
+        <div class="loading-wrapper" *ngIf="isLoading">
+          <div class="loading-box a"><mat-spinner></mat-spinner></div>
+          <div class="loading-box b">Loading...</div>
+        </div>
         <div class="wrapper">
           <div *ngFor="let airline of airlinesPage" class="box">
             <div class="container">

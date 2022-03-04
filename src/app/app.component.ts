@@ -14,6 +14,7 @@ import { AirlinesService } from './core/services/airlines/airlines.service';
 export class AppComponent implements OnInit, OnDestroy {
 
   title = 'kayak-angular';
+  isLoading = true;
 
   airlines: any = [];
   airlinesPage: any = [];
@@ -22,14 +23,17 @@ export class AppComponent implements OnInit, OnDestroy {
 
   pageSizeOptionsXSmall = [3, 6, 12, 60];
   pageSizeOptionsSmall = [4, 8, 16, 64];
+  pageSizeOptionsXLarge = [6, 12, 24, 120];
   pageSizeOptionsDefault = [6, 12, 24, 120];
 
   pageSizeXSmall = 3;
   pageSizeSmall = 6;
+  pageSizeXLarge = 16;
   pageSizeDefault = 12;
 
   colsXSmall = 1;
   colsSmall = 2;
+  colsXLarge = 4;
   colsDefault = 4;
 
   length = this.airlines.length;
@@ -93,6 +97,7 @@ export class AppComponent implements OnInit, OnDestroy {
       });
 
     this.breakpointObserver
+      // .observe([Breakpoints.Medium, Breakpoints.Large])
       .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
@@ -103,6 +108,17 @@ export class AppComponent implements OnInit, OnDestroy {
         }
       });
 
+    // this.breakpointObserver
+    //   .observe([Breakpoints.XLarge])
+    //   .subscribe((state: BreakpointState) => {
+    //     if (state.matches) {
+    //       this.pageSize = this.pageSizeXLarge;
+    //       this.pageSizeOptions = this.pageSizeOptionsXLarge;
+    //       this.cols = this.colsXLarge;
+    //       this.showAirlines();
+    //     }
+    //   });
+
     this.airlinesService.getAirlines().pipe(takeUntil(this.destroy$)).subscribe((airlines: Object | Airline[]) => {
       this.airlines = airlines;
 
@@ -110,6 +126,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.pageIndex = 0;
 
       this.showAirlines();
+      this.isLoading = false;
     });
   }
 
