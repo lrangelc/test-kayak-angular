@@ -69,7 +69,8 @@ body {
 }
 
 .wrapper {
-  height: 65vh;
+  // height: 65vh;
+  height: 40vh;
   width: 100%;
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
@@ -198,6 +199,7 @@ body {
 
 @media only screen and (min-width: 320px) {
   .wrapper {
+    height: 40vh;
     grid-gap: 16px;
     grid-template-columns: 300px;
   }
@@ -225,6 +227,7 @@ body {
 
 @media only screen and (min-width: 765px) {
   .wrapper {
+    height: 65vh;
     grid-gap: 16px;
     grid-template-columns: 300px 300px;
   }
@@ -252,6 +255,7 @@ body {
 
 @media only screen and (min-width: 959px) {
   .wrapper {
+    height: 68vh;
     grid-gap: 16px;
     grid-template-columns: 300px 300px 300px 300px;
   }
@@ -275,4 +279,45 @@ body {
   .main-footer {
     margin-top: 125px;
   }
+}
+
+// @media only screen and (min-width: 2560px) {
+//   .wrapper {
+//     height: 66vh;
+//     grid-gap: 16px;
+//     grid-template-columns: 300px 300px 300px 300px;
+//   }
+
+//   .title {
+//     margin-left: 94px;
+//   }
+
+//   .subtitle {
+//     margin-left: 94px;
+//   }
+
+//   .airline-filters {
+//     margin-left: 94px;
+//   }
+
+//   .child {
+//     margin-left: 94px;
+//   }
+
+//   .main-footer {
+//     margin-top: 125px;
+//   }
+// }
+
+.loading-wrapper {
+  display: grid;
+  grid-template-columns: 100px;
+  grid-template-rows: 60% 40%;
+  grid-gap: 10px;
+  background-color: #f9fafb;
+}
+
+.loading-box {
+  padding: 20px;
+  font-size: 150%;
 }
