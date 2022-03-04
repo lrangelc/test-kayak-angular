@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 // Modules
 import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
+
+// Pipes
 import { DomainPipe } from './shared/pipes/domain.pipe';
 
 @NgModule({
