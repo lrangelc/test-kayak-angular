@@ -1,0 +1,13 @@
+<div class="loading-wrapper" *ngIf="isLoading">
+  <div class="loading-box a">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="loading-box b">Loading...</div>
+</div>
+<div class="airlines--grid">
+  <app-airline *ngFor="let airline of airlinesPage" [airline]="airline">
+  </app-airline>
+</div>
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
+  (page)="handlePageEvent($event)">
+</mat-paginator>

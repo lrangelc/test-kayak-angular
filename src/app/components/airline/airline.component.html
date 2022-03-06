@@ -1,0 +1,15 @@
+<div class="container">
+  <div></div>
+  <div class="airline-child-image">
+    <img class="airline-img" src="{{'https://content.r9cdn.net' + airline.logoURL}}" alt="">
+  </div>
+  <div class="airline-child-text">
+    <div class="alliance-name">{{airline.name}}</div>
+    <div class="alliance-checkbox" *ngIf="airline.alliance === ONEWORLD_VALUE">Oneworld</div>
+    <div class="alliance-checkbox" *ngIf="airline.alliance === SKY_TEAM_VALUE">Sky Team</div>
+    <div class="alliance-checkbox" *ngIf="airline.alliance === STAR_ALLIANCE_VALUE">Star Alliance</div>
+    <div class="alliance-phone">{{airline.phone}}</div>
+    <div class="alliance-site">{{airline.site | domain}}</div>
+  </div>
+  <div></div>
+</div>

@@ -3,8 +3,8 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { PageEvent } from '@angular/material/paginator';
 import { map, Observable, Subject, takeUntil } from 'rxjs';
 
-import { Airline } from './core/models/airline.interface';
-import { AirlinesService } from './core/services/airlines/airlines.service';
+import { Airline } from './models/airline.interface';
+import { AirlinesService } from './shared/services/airlines/airlines.service';
 
 @Component({
   selector: 'app-root',
@@ -97,7 +97,6 @@ export class AppComponent implements OnInit, OnDestroy {
       });
 
     this.breakpointObserver
-      // .observe([Breakpoints.Medium, Breakpoints.Large])
       .observe([Breakpoints.Medium, Breakpoints.Large, Breakpoints.XLarge])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
@@ -107,17 +106,6 @@ export class AppComponent implements OnInit, OnDestroy {
           this.showAirlines();
         }
       });
-
-    // this.breakpointObserver
-    //   .observe([Breakpoints.XLarge])
-    //   .subscribe((state: BreakpointState) => {
-    //     if (state.matches) {
-    //       this.pageSize = this.pageSizeXLarge;
-    //       this.pageSizeOptions = this.pageSizeOptionsXLarge;
-    //       this.cols = this.colsXLarge;
-    //       this.showAirlines();
-    //     }
-    //   });
 
     this.airlinesService.getAirlines().pipe(takeUntil(this.destroy$)).subscribe((airlines: Object | Airline[]) => {
       this.airlines = airlines;
