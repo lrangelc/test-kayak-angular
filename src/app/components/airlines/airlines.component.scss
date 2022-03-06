@@ -1,22 +1,109 @@
+.title {
+  margin: 0;
+  padding: 0;
+  margin-top: 67px;
+  margin-left: 50px;
+  font-size: 44px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.subtitle {
+  margin: 0;
+  padding: 0;
+  margin-top: 73px;
+  margin-left: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #192024;
+}
+
+.airline-filters {
+  margin-left: 50px;
+  margin-top: 23px;
+  margin-bottom: 50px;
+}
+
+.filter-checkbox {
+  margin: 0;
+  padding: 0;
+  margin-right: 24px;
+}
+
 .airlines--grid {
   display: flex;
   flex-direction: column;
+  grid-gap: 16px;
+  margin-left: 50px;
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/*
+@media screen and (min-width: 31em) and (max-width: 39.9em) {
+  .title {
+    margin-left: 94px;
+  }
+
+  .subtitle {
+    margin-left: 94px;
+  }
+
+  .airline-filters {
+    margin-left: 94px;
+  }
+
+  .airlines--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    margin-left: 94px;
+    width: 80%;
+  }
+}
+*/
 
 // tablets
 @media screen and (min-width: 40em) and (max-width: 63.9em) {
+  .title {
+    margin-left: 94px;
+  }
+
+  .subtitle {
+    margin-left: 94px;
+  }
+
+  .airline-filters {
+    margin-left: 94px;
+  }
+
   .airlines--grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    grid-gap: 16px;
+    margin-left: 94px;
+    width: 80%;
   }
 }
 
 // web
 @media screen and (min-width: 64em) {
+  .title {
+    margin-left: 94px;
+  }
+
+  .subtitle {
+    margin-left: 94px;
+  }
+
+  .airline-filters {
+    margin-left: 94px;
+  }
+
   .airlines--grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+    margin-left: 94px;
+    width: 80%;
   }
 }

@@ -1,13 +1,24 @@
-<div class="loading-wrapper" *ngIf="isLoading">
-  <div class="loading-box a">
-    <mat-spinner></mat-spinner>
+<app-loading [isLoading]="isLoading"></app-loading>
+
+<div>
+  <div class="title">Airlines</div>
+  <div class="subtitle">Filter by Alliances</div>
+  <div class="airline-filters">
+    <mat-checkbox class="filter-checkbox" [(ngModel)]="isOneworld" (change)="setFilter($event.checked)">Oneworld
+    </mat-checkbox>
+    <mat-checkbox class="filter-checkbox" [(ngModel)]="isSkyTeam" (change)="setFilter($event.checked)">Sky Team
+    </mat-checkbox>
+    <mat-checkbox class="filter-checkbox" [(ngModel)]="isStarAlliance" (change)="setFilter($event.checked)"> Star
+      Alliance
+    </mat-checkbox>
   </div>
-  <div class="loading-box b">Loading...</div>
 </div>
+
 <div class="airlines--grid">
   <app-airline *ngFor="let airline of airlinesPage" [airline]="airline">
   </app-airline>
 </div>
+
 <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [pageIndex]="pageIndex"
   (page)="handlePageEvent($event)">
 </mat-paginator>

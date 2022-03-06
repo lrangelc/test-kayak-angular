@@ -9,6 +9,8 @@ import { Airline } from './../../models/airline.interface';
 })
 export class AirlineComponent implements OnInit {
 
+  CONTENT_CDN = 'https://content.r9cdn.net';
+
   ONEWORLD_VALUE = 'OW';
   SKY_TEAM_VALUE = 'ST';
   STAR_ALLIANCE_VALUE = 'SA';

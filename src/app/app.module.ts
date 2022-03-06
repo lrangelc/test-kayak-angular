@@ -16,13 +16,15 @@ import { MaterialModule } from './material/material.module';
 import { DomainPipe } from './shared/pipes/domain.pipe';
 import { AirlineComponent } from './components/airline/airline.component';
 import { AirlinesComponent } from './components/airlines/airlines.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DomainPipe,
     AirlineComponent,
-    AirlinesComponent
+    AirlinesComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

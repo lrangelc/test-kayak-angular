@@ -87,4 +87,9 @@ export class AirlinesComponent implements OnInit, OnDestroy {
     this.pageIndex = event.pageIndex;
     this.showAirlines();
   }
+
+  setFilter(completed: boolean) {
+    this.pageIndex = 0;
+    this.showAirlines();
+  }
 }
