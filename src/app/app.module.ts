@@ -11,15 +11,20 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { MaterialModule } from './material/material.module';
-import { CoreModule } from './core/core.module';
 
 // Pipes
 import { DomainPipe } from './shared/pipes/domain.pipe';
+import { AirlineComponent } from './components/airline/airline.component';
+import { AirlinesComponent } from './components/airlines/airlines.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DomainPipe
+    DomainPipe,
+    AirlineComponent,
+    AirlinesComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,6 @@ import { DomainPipe } from './shared/pipes/domain.pipe';
     HttpClientModule,
     HttpClientJsonpModule,
     MaterialModule,
-    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

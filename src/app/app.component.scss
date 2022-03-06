@@ -69,7 +69,6 @@ body {
 }
 
 .wrapper {
-  // height: 65vh;
   height: 40vh;
   width: 100%;
   display: grid;
@@ -90,28 +89,24 @@ body {
 }
 
 .alliance-name {
-  font-family: "Helvetica Neue";
   font-size: 16px;
   font-weight: bold;
   color: #192024;
 }
 
 .alliance-checkbox {
-  font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: normal;
   color: #192024;
 }
 
 .alliance-phone {
-  font-family: "Helvetica Neue";
   font-size: 16px;
   font-weight: normal;
   color: #192024;
 }
 
 .alliance-site {
-  font-family: "Helvetica Neue";
   font-size: 14px;
   font-weight: normal;
   color: #5a6872;
@@ -174,7 +169,6 @@ body {
   padding: 0;
   margin-top: 67px;
   margin-left: 94px;
-  font-family: "Helvetica Neue";
   font-size: 44px;
   font-weight: 900;
   color: #000000;
@@ -185,7 +179,6 @@ body {
   padding: 0;
   margin-top: 73px;
   margin-left: 94px;
-  font-family: "Helvetica Neue";
   font-size: 16px;
   font-weight: bold;
   color: #192024;
@@ -279,45 +272,4 @@ body {
   .main-footer {
     margin-top: 125px;
   }
-}
-
-// @media only screen and (min-width: 2560px) {
-//   .wrapper {
-//     height: 66vh;
-//     grid-gap: 16px;
-//     grid-template-columns: 300px 300px 300px 300px;
-//   }
-
-//   .title {
-//     margin-left: 94px;
-//   }
-
-//   .subtitle {
-//     margin-left: 94px;
-//   }
-
-//   .airline-filters {
-//     margin-left: 94px;
-//   }
-
-//   .child {
-//     margin-left: 94px;
-//   }
-
-//   .main-footer {
-//     margin-top: 125px;
-//   }
-// }
-
-.loading-wrapper {
-  display: grid;
-  grid-template-columns: 100px;
-  grid-template-rows: 60% 40%;
-  grid-gap: 10px;
-  background-color: #f9fafb;
-}
-
-.loading-box {
-  padding: 20px;
-  font-size: 150%;
 }
