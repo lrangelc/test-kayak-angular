@@ -1,0 +1,63 @@
+.box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 -1px 4px 0 rgba(25, 32, 36, 0.04),
+    0 3px 6px 0 rgba(25, 32, 36, 0.16);
+  border: solid 1px #363f45;
+  width: 300px;
+  height: 240px;
+  // width: 100px;
+  // height: 75px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 50px auto auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.airline-child-image {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.airline-child-text {
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.airline-img {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.alliance-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #192024;
+}
+
+.alliance-checkbox {
+  font-size: 14px;
+  font-weight: normal;
+  color: #192024;
+}
+
+.alliance-phone {
+  font-size: 16px;
+  font-weight: normal;
+  color: #192024;
+}
+
+.alliance-site {
+  font-size: 14px;
+  font-weight: normal;
+  color: #5a6872;
+}
